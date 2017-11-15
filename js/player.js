@@ -111,11 +111,34 @@ class Player {
     this.progressBar.style.width = `${curTime / maxTime * 100}%`;
   }
   
-  addPlaylist(playlist) {
+  updatePlaylist(json) {
+    const playlist = transformJson(json);
     this.playlistWrapper.innerHTML = ``;
-    playlist.convertToHtml().forEach(track => {
+    playlist.forEach(track => {
       this.playlistWrapper.innerHTML += track;
     });
+    
+    function transformJson(json) {
+      const objFromJson = JSON.parse(json);
+      const htmlList = [];
+      let hasCurrent = false;
+
+      for (let i in objFromJson) {
+        if (objFromJson.hasOwnProperty(i))
+          if (hasCurrent)
+            htmlList.push(`<div class="playlist__track" data-url="${objFromJson[i]}" data-name="${i}">
+                            ${i}
+                          </div>`);
+          else {
+            hasCurrent = true;
+            htmlList.push(`<div class="playlist__track current" data-url="${objFromJson[i]}" data-name="${i}">
+                            ${i}
+                          </div>`);
+          }
+      }
+
+      return htmlList;
+    }
   }
   
   initTracks() {

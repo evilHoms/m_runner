@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 .m-runner {
   display: flex;
   flex-direction: column;
@@ -15,6 +19,14 @@
   overflow: hidden;
   
   background: aqua;
+}
+
+.player-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  width: 100%;
 }
 
 .player {
@@ -36,6 +48,7 @@
   
   background: azure;
   
+  font-size: 2.4rem;
   font-family: 'Open Sans', sans-serif;
   color: #01534c;
 }
@@ -43,6 +56,7 @@
 .player__play-time {
   padding: 20px;
   
+  font-size: 2rem;
   font-family: 'Open Sans', sans-serif;
   color: #01534c;
 }
@@ -72,7 +86,7 @@
 
 .ctrl-btn {
   width: 20%;
-  padding: 4% 0;
+  padding: 10px 0;
   border: none;
   
   background: aqua;
@@ -89,7 +103,30 @@
 }
 
 .ctrl-btn__img {
-  width: 50%;
+  width: 30%;
+}
+
+.add-btn {
+  padding: 10px 30px;
+  border: none;
+  
+  background: azure;
+  
+  font-size: 2.2rem;
+  font-family: 'Open Sans', sans-serif;
+  color: #01534c;
+  
+  cursor: pointer;
+  
+  &:hover {
+    background: orange;
+    color: azure;
+  }
+  
+  &:active {
+    background: azure;
+    color: aqua;
+  }
 }
 
 .playlist {
@@ -115,6 +152,7 @@
   
   background: azure;
   
+  font-size: 1.6rem;
   font-family: 'Open Sans', sans-serif;
   
   cursor: pointer;
@@ -133,8 +171,16 @@
     align-items: flex-start;
   }
   
-  .player {
+  .player-wrapper {
     width: 50%;
+  }
+  
+  .player__screen {
+    font-size: 2rem;
+  }
+  
+  .player__play-time {
+    font-size: 1.4rem;
   }
   
   .playlist {
@@ -154,6 +200,7 @@
     
     background: azure;
     
+    font-size: 1.5rem;
     color: #01534c;
   }
   
@@ -164,5 +211,13 @@
   .ctrl-btn {
     margin: 0 10px;
     padding: 17px;
+  }
+  
+  .ctrl-btn__img {
+    width: 50%;
+  }
+  
+  .add-btn {
+    font-size: 1.4rem; 
   }
 }

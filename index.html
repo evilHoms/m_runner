@@ -15,40 +15,47 @@
   
   <article class="m-runner">
     
-    <section class="player">
+    <div class="player-wrapper">
       
-      <div class="player__screen">
-        song's title
-      </div>
+      <section class="player">
       
+        <div class="player__screen">
+          song's title
+        </div>
+
+
+        <div class="player__play-time">
+          00:00
+        </div>
+
+
+        <div class="player__progress-bar">
+          <div class="player__progress-bar__bar"></div>
+        </div>
+
+
+        <div class="player__control-btns">
+          <button class="prev-btn ctrl-btn">
+            <img class="ctrl-btn__img" src="./img/prev-btn.svg" alt="Previous song">
+          </button>
+          <button class="play-btn ctrl-btn">
+            <img class="ctrl-btn__img" src="./img/play-btn.svg" alt="Play">
+          </button>
+          <button class="stop-btn ctrl-btn">
+            <img class="ctrl-btn__img" src="./img/stop-btn.svg" alt="Stop">
+          </button>
+          <button class="next-btn ctrl-btn">
+            <img class="ctrl-btn__img" src="./img/next-btn.svg" alt="Next song">
+          </button>
+        </div>
+
+      </section>
+
+      <section class="add-song">
+        <button class="add-btn">Add song</button>
+      </section>
       
-      <div class="player__play-time">
-        00:00
-      </div>
-      
-      
-      <div class="player__progress-bar">
-        <div class="player__progress-bar__bar"></div>
-      </div>
-      
-      
-      <div class="player__control-btns">
-        <button class="prev-btn ctrl-btn">
-          <img class="ctrl-btn__img" src="./img/prev-btn.svg" alt="Previous song">
-        </button>
-        <button class="play-btn ctrl-btn">
-          <img class="ctrl-btn__img" src="./img/play-btn.svg" alt="Play">
-        </button>
-        <button class="stop-btn ctrl-btn">
-          <img class="ctrl-btn__img" src="./img/stop-btn.svg" alt="Stop">
-        </button>
-        <button class="next-btn ctrl-btn">
-          <img class="ctrl-btn__img" src="./img/next-btn.svg" alt="Next song">
-        </button>
-      </div>
-      
-    </section>
-    
+    </div>
     
     <section class="playlist">
       

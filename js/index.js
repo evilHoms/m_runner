@@ -14,15 +14,12 @@ const player = new Player(
   document.querySelector(`.current-track`)
 );
 
-//Создали плейлист из переданных .json данных
-const mainPlaylist = new Playlist(JSON.parse(jsonTrackArray));
-//Добавили созданный ранее плейлист на страницу
-player.addPlaylist(mainPlaylist);
 
 
-//Упростить все эти действия
+//Данные действия вызываются после получения данных от сервера с плейлистом
+//Трансформируем Json файл и добаляем треки из него на страницу
+player.updatePlaylist(jsonTrackArray);
 
-
-//Выбираем добавленные на страницу элементы и добавляем их в плеер для взаимодействия и инициализируем листенеры
-const currentPlaylist = document.querySelectorAll(`.playlist__track`);
-player.init(currentPlaylist);
+//Создаем объект плейлиста и передаем его список в плеер для инициализации
+const playlist = new Playlist(document.querySelectorAll(`.playlist__track`), jsonTrackArray);
+player.init(playlist.htmlList);
